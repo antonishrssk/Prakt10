@@ -1,0 +1,52 @@
+﻿<Window x:Class="Prakt10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prakt10"
+        mc:Ignorable="d"
+        Title="Практическая работа №10" Height="450" Width="800" ResizeMode="CanMinimize" Icon="/FLGRUS.ICO">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Menu VerticalAlignment="Top" Grid.ColumnSpan="3">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход" Click="miExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Команды">
+                <MenuItem Header="Сгенерировать числа" Click="btnGenerateNumbers_Click"/>
+                <MenuItem Header="Рассчитать число">
+                    <MenuItem Header="Максимальное среди четных" Click="btnCalcMaxAmongEven_Click"/>
+                    <MenuItem Header="Минимальное среди кратных A" Click="btnCalcMinAmongMultiplesOfA_Click"/>
+                </MenuItem>
+                <MenuItem Header="Очистить" Click="btnClear_Click"/>
+            </MenuItem>
+            <MenuItem Header="О программе" Click="miInfo_Click"/>
+        </Menu>
+        <Label Content="Количество чисел" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="15,40" FontSize="14"/>
+        <TextBox x:Name="tbCount" Grid.ColumnSpan="2" Margin="20,65" VerticalContentAlignment="Center" FontSize="14"/>
+        <Button Content="Сгенерировать числа" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="20,40" FontSize="14" Click="btnGenerateNumbers_Click"/>
+        <Label Content="Максимальное число среди четных" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Margin="15" FontSize="13"/>
+        <TextBox x:Name="tbMaxAmongEven" Grid.ColumnSpan="2" Grid.Row="1" Margin="20,40" VerticalContentAlignment="Center" FontSize="14" IsReadOnly="True"/>
+        <Button Content="Рассчитать" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Bottom" Margin="20,15" FontSize="14" Click="btnCalcMaxAmongEven_Click"/>
+        <TextBlock Text="Минимальное число среди кратных А" TextWrapping="Wrap" Grid.Row="2" VerticalAlignment="Top" Margin="20,7"/>
+        <TextBox x:Name="tbMinAmongMultiplesOfA" Grid.Row="2" Margin="20,40" VerticalContentAlignment="Center" FontSize="14" IsReadOnly="True"/>
+        <Label Content="Значение A" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" Margin="15"/>
+        <TextBox x:Name="tbValueA" Grid.Column="1" Grid.Row="2" Margin="20,40" VerticalContentAlignment="Center" FontSize="14"/>
+        <Button Content="Рассчитать" Grid.ColumnSpan="2" Grid.Row="2" VerticalAlignment="Bottom" Margin="20,15" FontSize="14" Click="btnCalcMinAmongMultiplesOfA_Click"/>
+        <Button Content="О программе" Grid.Row="3" Margin="20,13" FontSize="14" Click="miInfo_Click"/>
+        <Button Content="Выход" Grid.Column="1" Grid.Row="3" Margin="20,13" FontSize="14" Click="miExit_Click"/>
+        <Label Content="Список чисел" Grid.Column="2" VerticalAlignment="Top" Margin="20,25" FontSize="14"/>
+        <ListBox x:Name="listBoxNumbers" Grid.Column="2" Grid.RowSpan="4" Margin="20,50"/>
+        <Button Content="Очистить" Grid.Column="2" Grid.Row="3" Margin="20,13" FontSize="14" Click="btnClear_Click"/>
+    </Grid>
+</Window>
